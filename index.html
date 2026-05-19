@@ -199,31 +199,36 @@
 </div>
 
 <script>
-  const scriptURL = "https://script.google.com/macros/s/AKfycbxDEzltHcBfylO2EqyeZoxho47dBC2vWk0R37Lrfep7Il7lzu0yP50H9UeGMBu79OLy/exec";
+  // ১. 
+  const scriptURL = "https://script.google.com/macros/s/AKfycbwPtmzaYLq2WAM4k2Kvam0xg2vUyMe0DKceJ6FbgZgSEP9GM4hjN11E2r1JGi0X746v/exec"; 
   const redirectURL = "https://lovable.dev";
 
   document.getElementById("loginForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const data = {
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value
-    };
+    // 
+    const formData = new URLSearchParams();
+    formData.append("email", document.getElementById("email").value);
+    formData.append("message", document.getElementById("message").value);
 
     fetch(scriptURL, {
       method: "POST",
-      body: JSON.stringify(data),
+      body: formData, // JSON-ে
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/x-www-form-urlencoded" // 
       }
     })
-    .then(() => {
+    .then(response => response.json())
+    .then(result => {
+      // 
       window.location.href = redirectURL;
     })
     .catch(err => {
       alert("Submission failed");
       console.error(err);
     });
+  });
+</script>
   });
 </script>
 
